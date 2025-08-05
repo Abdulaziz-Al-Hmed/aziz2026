@@ -35,8 +35,36 @@
         }
       ]
     },
+
     {
-      "source": "/:path*.+(css|js|jpg|jpeg|png|gif|ico|svg|woff|woff2|ttf|eot)",
+      "source": "/(.*).css",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*).js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*).png",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*).svg",
       "headers": [
         {
           "key": "Cache-Control",
@@ -44,5 +72,6 @@
         }
       ]
     }
+    // كرر لبقية الصيغ إن احتجت (jpeg, woff, etc.)
   ]
 }
